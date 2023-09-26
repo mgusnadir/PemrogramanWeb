@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#data-table {
+    margin: 20px;
+    border: solid black;
+    width: 80%;
+    border: 1px solid #000;
+    background-color: red;
+}
+
+#data-table th,
+#data-table td {
+    border: 1px solid #000;
+    padding: 5px;
+    text-align: center;
+}
+
+#data-table th {
+    background-color: red;
+    color: black;
+}

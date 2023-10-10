@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PENJUMLAHAN BILANGAN</h1>
+        <label for="">Bilangan Pertama :</label>
+        <input type="number" id="bilanganpertama"  required>
+        <label for="">Bilangan Kedua :</label>
+        <input type="number" id="bilangankedua" required>
+        <div class="" >
+            <button type="submit" onclick="addiction()">jumlahkan
+            </button>
+            <button type="ulang" onclick="ulang()">ulang
+            </button>
+        </div>
+       
+        
+        <script>
+            function addiction() {
+                let bilanganpertama = document.getElementById("bilanganpertama").value;
+                let bilangankedua = document.getElementById("bilangankedua").value;
+                let add = Number(bilanganpertama) + Number(bilangankedua);
+                alert("Hasil Penjumlahan = "+add)
+            }
+            function ulang() {
+                bilanganpertama.value = "";
+                bilangankedua.value = "";
+            }
+        </script>
+</body>
+</html>

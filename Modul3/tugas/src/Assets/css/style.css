@@ -1,0 +1,83 @@
+.custom-image {
+  margin-left: 50px;
+}
+
+.custom-button-mr {
+  margin-right: 10px;
+}
+
+.custom-button-width {
+  width: 100px;
+}
+
+.footer-wrapper {
+  min-height: 50px;
+}
+
+.row {
+  width: 100%;
+}
+
+.home {
+  width: 100%;
+  min-height: 115vh;
+  background: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+  align-items: center;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .custom-image {
+    margin-left: 0px;
+  }
+
+  .custom-button {
+    margin-right: 0px;
+  }
+
+  .custom-button-width {
+    width: 100%;
+  }
+}
+
+.google-map {
+  padding-bottom: 50%;
+  position: relative;
+}
+
+.google-map iframe {
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+
+.office-image-container {
+  max-width: 100%;
+}
+@media (min-width: 992px) {
+  .list-unstyled {
+    list-style: disc;
+    padding-left: 20px;
+    columns: 2; 
+  }
+}
+
+@media (max-width: 991px) {
+  .list-unstyled {
+    list-style: disc;
+    padding-left: 20px;
+    columns: 1; 
+  }
+}
+
+.number-list {
+  list-style-type: decimal; 
+  padding-left: 20px; 
+}

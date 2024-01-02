@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ujian Akhir Praktikum Pemrograman Web</title>
+</head>
+<body style="align-items:center ; background-color: rgb(226, 225, 226);">
+    <center>
+        <h1 style="color: rgb(156, 67, 164); font-size:28px;">
+            Ujian Akhir Praktikum Pemrograman Web
+        </h1>
+        <table class="katalog_barang" border="solid" style="background-color:rgb(242, 205, 233);">
+            <thead>
+                <tr>
+                    <th>Kode</th>
+                    <th>Barang</th>
+                    <th>Harga</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Barang A</td>
+                    <td id="001">10000</td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Barang B</td>
+                    <td id="002">20000</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>Barang C</td>
+                    <td id="003">30000</td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 style="color: rgb(156, 67, 164); font-size:28px;">
+            Inputan User
+        </h1>
+        <table style="background-color:rgb(242, 205, 233); border-radius: 5%;">
+            <tbody>
+                <tr>
+                    <td>Masukkan Kode</td>
+                    <td>:</td>
+                    <td><input type="number" id="kode"></td>
+                </tr>
+                <tr>
+                    <td>Banyaknya Barang</td>
+                    <td>:</td>
+                    <td><input type="number" id="kuantitas"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <td>
+                    <button onclick="process()" style="background-color:rgb(217, 205, 238);">Submit</button>
+                </td>
+            </tfoot>
+        </table>
+    </center>
+    <script>
+        function process() {
+            input_kode = document.getElementById("kode").value;
+            input_kuantitas = document.getElementById("kuantitas").value;
+            if (input_kode != "") {
+                harga = document.getElementById(input_kode).innerText;
+                jumlah_harga = harga * input_kuantitas;
+                alert("Total Pembayaran adalah : " +jumlah_harga)
+                pembayaran = uang_bayar(jumlah_harga);
+                if (pembayaran < 0) {
+                    alert("Pembayaran Gagal\nUang Anda Kurang Sebanyak : "+pembayaran)
+                } else {
+                    alert("Pembayaran Berhasil Dilakukan\nTotal Kembalian Anda adalah :"+pembayaran)
+                }
+            } else {
+                alert("Tolong Isi Kode Barang !!");
+            }
+        }
+        function uang_bayar(jumlah) {
+            uang_user = prompt("Masukkan Uang User :");
+            kembalian = uang_user - jumlah;
+            return kembalian;
+        }
+    </script>
+</body>
+</html>

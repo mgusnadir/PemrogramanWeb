@@ -4,6 +4,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [notification, setNotification] = useState({ type: "", message: "" });
 
   const baseUrl = "http://localhost:3000";
 
@@ -24,17 +25,20 @@ const Contact = () => {
         },
       });
 
+      console.log(res);
+
       if (res.status > 199 && res.status < 300) {
-        alert("Send Successfully !");
+        setNotification({ type: "success", message: "Email sent successfully!" });
       }
     } catch (error) {
+      setNotification({ type: "error", message: "Error sending email. Please try again." });
       console.error("Error sending email:", error);
     }
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    sendEmail();
+    await sendEmail();
   };
 
   return (
@@ -103,7 +107,7 @@ const Contact = () => {
                             </div>
                           </div>
                           <div className="col-md-12">
-                            <button onClick={() => sendEmail()} type="submit" className="button button-a button-big button-rouded">Send Message</button>
+                            <button type="submit" className="button button-a button-big button-rouded">Send Message</button>
                           </div>
                         </div>
                       </form>
@@ -133,6 +137,14 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
+                <div>
+                  {notification.type === "success" && (
+                    <div className="success-message">{notification.message}</div>
+                  )}
+                  {notification.type === "error" && (
+                    <div className="error-message">{notification.message}</div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -154,3 +166,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

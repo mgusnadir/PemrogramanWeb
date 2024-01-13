@@ -1052,3 +1052,11 @@ footer .copyright {
     bottom: 15px;
   }
 }
+
+.success-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
+}
